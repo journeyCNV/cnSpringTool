@@ -172,19 +172,39 @@ public class CNApplicationContext {
         if(beanDefinitionMap.containsKey(beanName)){
             BeanDefinition beanDefinition = beanDefinitionMap.get(beanName);
             if(beanDefinition.getScope().equals("singleton")){
-
-                //如果是单例bean，从单例池返回
-                Object o = singletonObjects.get(beanName);
-                return o;
+                //双检锁单例模式
+                if(!singletonObjects.containsKey(beanName)){
+                    synchronized (CNApplicationContext.class){
+                        if(!singletonObjects.containsKey(beanName)){
+                            Class beanClazz = beanDefinition.getClazz();
+                            try {
+                                Object bean = beanClazz.getDeclaredConstructor().newInstance();
+                                singletonObjects.put(beanName,bean);
+                            } catch (InstantiationException e) {
+                                e.printStackTrace();
+                            } catch (IllegalAccessException e) {
+                                e.printStackTrace();
+                            } catch (InvocationTargetException e) {
+                                e.printStackTrace();
+                            } catch (NoSuchMethodException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                    //这里记得从单例池拿，而不是上面直接返回
+                    return singletonObjects.get(beanName);
+                }else {
+                    //如果单例池里有从单例池返回
+                    Object bean = singletonObjects.get(beanName);
+                    return bean;
+                }
             }else {
                 //要New一个bean 原型bean
                 Object bean = createBean(beanName,beanDefinition);
                 return bean;
             }
-
         }else {
             throw new NullPointerException();
         }
-
     }
 }

@@ -12,8 +12,8 @@ public class Hhhh implements BeanNameAware {
     @Autowired
     private TestService testService;
 
-    //@Autowired
-    //private FoodImpl food;
+    @Autowired
+    private Food food;
 
     private String beanName;
 
@@ -24,9 +24,9 @@ public class Hhhh implements BeanNameAware {
 
     public void test(){
         //希望拿对象的时候已经赋好值了
-        System.out.println(testService);
-        //System.out.println(food);
-        System.out.println(beanName); //通过回调得到beanName
+        System.out.println("hhhh依赖的Bean1："+testService);
+        System.out.println("hhhh依赖的Bean2："+food);
+        System.out.println("hhhh的Bean名字是："+beanName); //通过回调得到beanName
     }
 
 }

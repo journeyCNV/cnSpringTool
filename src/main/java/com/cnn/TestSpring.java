@@ -11,7 +11,11 @@ public class TestSpring {
         //System.out.println(cnApplicationContext.getBean("hhhh"));
         Hhhh hhhh = (Hhhh) cnApplicationContext.getBean("hhhh");
         hhhh.test();
+        //System.out.println(cnApplicationContext.getBean("hhhh"));
+        //System.out.println(cnApplicationContext.getBean("hhhh"));
+
         Food food = (Food) cnApplicationContext.getBean("food");
+        //System.out.println(food);
         food.test();
 
     }

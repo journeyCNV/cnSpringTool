@@ -36,7 +36,7 @@ public class NNBeanProcessor implements BeanPostProcessor {
                     new InvocationHandler() {
                         @Override
                         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                            System.out.println("代理逻辑");
+                            System.out.println("food用到的代理逻辑");
                             /**
                              * 可以找切点，然后执行切点的方法 ……
                              */
