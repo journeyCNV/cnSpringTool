@@ -4,36 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="">
+    <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="reconfiguration frame table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/TestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/TestConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/FoodImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/FoodImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Hhhh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Hhhh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/NNBeanProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/NNBeanProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/TestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/Autowired.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/annotation/Autowired.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/config/BeanDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/BeanNameAware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/BeanNameAware.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/BeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/config/BeanPostProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/CNApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/annotation/Component.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/ComponentScan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/annotation/ComponentScan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/InitializingBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/InitializingBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/Scope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/annotation/Scope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/TestConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/TestConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/annotation/Autowired.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/annotation/Autowired.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/TestSpring.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/TestSpring.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/FoodImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/FoodImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Hhhh.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Hhhh.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/NNBeanProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/NNBeanProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/TestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/TestService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/Autowired.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/BeanDefinition.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/BeanPostProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/CNApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/CNApplicationContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/Component.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/ComponentScan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/Scope.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -70,7 +47,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="vcs.Mercurial" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -136,7 +113,7 @@
       <workItem from="1623831874043" duration="11817000" />
       <workItem from="1623914406370" duration="11000" />
       <workItem from="1623914431633" duration="24702000" />
-      <workItem from="1624008219234" duration="26542000" />
+      <workItem from="1624008219234" duration="45704000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1624124733140</created>
@@ -152,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624129225654</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="reconfiguration frame table">
+      <created>1624186579484</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1624186579484</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +148,7 @@
     </ignored-roots>
     <MESSAGE value="First Commit" />
     <MESSAGE value="update getBean" />
-    <option name="LAST_COMMIT_MESSAGE" value="update getBean" />
+    <MESSAGE value="reconfiguration frame table" />
+    <option name="LAST_COMMIT_MESSAGE" value="reconfiguration frame table" />
   </component>
 </project>

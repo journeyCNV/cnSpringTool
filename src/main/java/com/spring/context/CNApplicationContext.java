@@ -8,6 +8,7 @@ import com.spring.annotation.ComponentScan;
 import com.spring.annotation.Scope;
 import com.spring.beansfactory.config.BeanDefinition;
 import com.spring.beansfactory.config.BeanPostProcessor;
+import com.spring.beansfactory.support.AutowireCapableBeanFactory;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -18,13 +19,21 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class CNApplicationContext {
+    //配置文件
     private Class configClass;
+
+    //BeanFactory支持类
+    private AutowireCapableBeanFactory beanFactory = new AutowireCapableBeanFactory();
+
     //单例池
     private ConcurrentHashMap<String,Object> singletonObjects = new ConcurrentHashMap<>();
+
     //存Bean的定义
     private ConcurrentHashMap<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<>();
 
     private List<BeanPostProcessor> beanPostProcessorList = new ArrayList<>();
+
+
 
     public CNApplicationContext(Class configClass){
         this.configClass = configClass;
@@ -49,11 +58,15 @@ public class CNApplicationContext {
     public Object createBean(String beanName,BeanDefinition beanDefinition){
         Class clazz = beanDefinition.getClazz();
         Object instance = null;
-        try {
-            //通过反射获得Bean
-            instance = clazz.getDeclaredConstructor().newInstance();
 
-            //依赖注入 反射
+        try {
+            //调用support包里的方法 包含依赖注入的-构造注入
+            instance = beanFactory.createBeanInstance(beanName,clazz);
+
+            //通过反射获得Bean
+            //instance = clazz.getDeclaredConstructor().newInstance();
+
+            //依赖注入-属性注入
             for (Field declaredField : clazz.getDeclaredFields()) {
                 //如果属性上加了Autowired注解，那我就进行属性赋值
                 if(declaredField.isAnnotationPresent(Autowired.class)){
@@ -66,7 +79,7 @@ public class CNApplicationContext {
                 }
             }
 
-            //Aware回调
+            //Aware回调-依赖注入-回调注入
             if(instance instanceof BeanNameAware){
                 ((BeanNameAware) instance).setBeanName(beanName);
             }
@@ -96,8 +109,6 @@ public class CNApplicationContext {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
         return null;
@@ -217,3 +228,4 @@ public class CNApplicationContext {
         }
     }
 }
+
