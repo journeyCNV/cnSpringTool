@@ -1,4 +1,13 @@
-package com.spring;
+package com.spring.context;
+
+import com.spring.beansfactory.BeanNameAware;
+import com.spring.beansfactory.InitializingBean;
+import com.spring.annotation.Autowired;
+import com.spring.annotation.Component;
+import com.spring.annotation.ComponentScan;
+import com.spring.annotation.Scope;
+import com.spring.beansfactory.config.BeanDefinition;
+import com.spring.beansfactory.config.BeanPostProcessor;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -13,7 +22,7 @@ public class CNApplicationContext {
     //单例池
     private ConcurrentHashMap<String,Object> singletonObjects = new ConcurrentHashMap<>();
     //存Bean的定义
-    private ConcurrentHashMap<String,BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<>();
 
     private List<BeanPostProcessor> beanPostProcessorList = new ArrayList<>();
 

@@ -1,8 +1,7 @@
 package com.cnn.survive;
 
-import com.spring.Component;
-import com.spring.InitializingBean;
-import com.spring.Scope;
+import com.spring.annotation.Component;
+import com.spring.beansfactory.InitializingBean;
 
 @Component("testService")
 public class TestService implements InitializingBean {

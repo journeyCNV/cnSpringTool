@@ -1,7 +1,7 @@
 package com.cnn.survive;
 
-import com.spring.BeanPostProcessor;
-import com.spring.Component;
+import com.spring.beansfactory.config.BeanPostProcessor;
+import com.spring.annotation.Component;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

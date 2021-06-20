@@ -1,6 +1,6 @@
 package com.cnn.survive;
 
-import com.spring.Component;
+import com.spring.annotation.Component;
 
 @Component("food")
 public class FoodImpl implements Food {

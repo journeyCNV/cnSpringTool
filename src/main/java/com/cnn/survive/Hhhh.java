@@ -1,9 +1,9 @@
 package com.cnn.survive;
 
-import com.spring.Autowired;
-import com.spring.BeanNameAware;
-import com.spring.Component;
-import com.spring.Scope;
+import com.spring.annotation.Autowired;
+import com.spring.beansfactory.BeanNameAware;
+import com.spring.annotation.Component;
+import com.spring.annotation.Scope;
 
 @Component("hhhh")
 @Scope("prototype")

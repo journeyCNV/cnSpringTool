@@ -1,4 +1,4 @@
-package com.spring;
+package com.spring.beansfactory.config;
 
 /**
  * 模仿Spring源码

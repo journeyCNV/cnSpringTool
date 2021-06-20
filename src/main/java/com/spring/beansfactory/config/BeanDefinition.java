@@ -1,12 +1,13 @@
-package com.spring;
+package com.spring.beansfactory.config;
 
 public class BeanDefinition {
 
+    public static final String SCOPE_DEFAULT = "";
+
     private Class clazz;
-    private String scope;
+    private String scope = SCOPE_DEFAULT;
 
     public BeanDefinition(){
-
     }
 
     public BeanDefinition(Class clazz,String scope){

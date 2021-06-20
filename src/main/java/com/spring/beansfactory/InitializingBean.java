@@ -1,4 +1,4 @@
-package com.spring;
+package com.spring.beansfactory;
 
 /**
  * 模仿Spring
