@@ -46,7 +46,7 @@ public class AutowireCapableBeanFactory {
             //Class[] params = cons[0].getParameterTypes();
             Parameter[] params = cons[0].getParameters(); //Java8的Parameter类
             if(params==null){ //如果唯一的构造函数是无参构造，直接使用无参
-                return new BeanSupport(cons[0].newInstance(),null,false);
+                return new BeanSupport(cons[0].newInstance(),null,false,null);
             }
             for (Parameter param : params) {
                 if(param.getType().isPrimitive()) { //如果是基本类型
@@ -62,45 +62,64 @@ public class AutowireCapableBeanFactory {
                 }
             }
             if(!mayHasBean)
-                return new BeanSupport(cons[0].newInstance(paramList.toArray()),null,mayHasBean);
+                return new BeanSupport(cons[0].newInstance(paramList.toArray()),null,mayHasBean,null);
             String[] beanNames = new String[paramBeanNames.size()];
-            return new BeanSupport(cons[0].newInstance(paramList.toArray()),paramBeanNames.toArray(beanNames),mayHasBean);
+            return new BeanSupport(cons[0].newInstance(paramList.toArray()),paramBeanNames.toArray(beanNames),mayHasBean,null);
         }else {
-            int countAuto = 0;
-            boolean hasNoParamCon = false;
+            int countAutowired = 0; //记录有多少个注解
+            Constructor<?> noParamCon = null;
             Constructor<?> recCon = null;
-            int recAutoTrue = 0;
-            int recAutoFalse = 0;
+            int recAutowiredTrue = 0;
+            int recAutowiredFalse = 0;
+            ArrayList<Constructor<?>> AutowiredFalseCons = new ArrayList<>();//存储可能要被选举的实例化方法
             for (Constructor<?> con : cons) {
                 if(con.isAnnotationPresent(Autowired.class)) {
                     if(con.getDeclaredAnnotation(Autowired.class).required()){
-                        recAutoTrue++;
+                        recAutowiredTrue++;
                         recCon = con;
                     }else {
-                        recAutoFalse++;
+                        recAutowiredFalse++;
+                        AutowiredFalseCons.add(con);
                     }
-                    countAuto++;
-                    continue;
+                    countAutowired++;
                 }
                 if(con.getParameters().length==0) {
-                    hasNoParamCon = true;
-                    recCon = con;
+                    noParamCon = con;
                 }
             }
-            if(countAuto==0&&hasNoParamCon){
-                return new BeanSupport(recCon.newInstance(),null,false);
+            //有多个构造并且没有注解，有无参构造
+            if(countAutowired==0&&noParamCon!=null){
+                return new BeanSupport(noParamCon.newInstance(),null,false,null);
             }
-            if(recAutoTrue==1&&recAutoFalse==0){
+            //有且仅有一个true的Autowired
+            if(recAutowiredTrue==1&&recAutowiredFalse==0){
                 //只有一个Autowired注解是true,并且没有其他
                 //处理recCon,解析参数
-                return null;
+                Parameter[] parameters = recCon.getParameters();
+                if(parameters==null){
+                    return new BeanSupport(recCon.newInstance(),null,false,null);
+                }
+                for (Parameter parameter : parameters) {
+                    if(parameter.getType().isPrimitive()) { //如果是基本类型
+                        paramList.add(parameter.getType()==Boolean.class?false:0);
+                    }else {
+                        paramList.add(null);
+                        paramBeanNames.add(parameter.getName());
+                        mayHasBean = true;
+                    }
+                }
+                String[] beanNames = new String[paramBeanNames.size()];
+                return new BeanSupport(recCon.newInstance(paramList.toArray()),paramBeanNames.toArray(beanNames),mayHasBean,null);
             }
-            if(recAutoTrue==0&&recAutoFalse>=0){
+            if(recAutowiredTrue==0&&recAutowiredFalse>=0){
                 //要在一堆false中进行选举，选能加载Bean更多的那个
-                return null;
+                BeanSupportCandidate beanSupportCandidate = new BeanSupportCandidate(AutowiredFalseCons,AutowiredFalseCons.size(),noParamCon);
+                return new BeanSupport(null,null,true,beanSupportCandidate);
             }
         }
         throw  new BeansException("无法确定使用 "+beanName+" Bean的哪个构造方法");
     }
+
+
 
 }

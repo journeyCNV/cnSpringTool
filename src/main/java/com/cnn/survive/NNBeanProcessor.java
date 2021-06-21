@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-@Component
+@Component("beanProcessor")
 public class NNBeanProcessor implements BeanPostProcessor {
 
     @Override

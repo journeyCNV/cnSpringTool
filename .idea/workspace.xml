@@ -4,8 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="">
+    <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="add Exception define">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/NNBeanProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/NNBeanProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/annotation/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/annotation/Component.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/annotation/ComponentScan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/annotation/ComponentScan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/AutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/AutowireCapableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/BeanSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/BeanSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/NNBeanProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/NNBeanProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/annotation/Component.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/annotation/Component.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/AutowireCapableBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/AutowireCapableBeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/BeanSupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/BeanSupport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +88,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TestSpring" />
@@ -106,7 +134,7 @@
       <workItem from="1623914431633" duration="24702000" />
       <workItem from="1624008219234" duration="48888000" />
       <workItem from="1624218226330" duration="4101000" />
-      <workItem from="1624254854059" duration="6711000" />
+      <workItem from="1624254854059" duration="14605000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1624124733140</created>
@@ -150,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624286359982</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add Exception define">
+      <created>1624289513520</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1624289513520</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

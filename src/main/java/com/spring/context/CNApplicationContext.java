@@ -232,5 +232,19 @@ public class CNApplicationContext {
             throw new NullPointerException();
         }
     }
+
+    /**
+     * Bean是否存在
+     * @param name
+     * @return
+     */
+    public boolean containsBean(String name){
+        if(singletonObjects.containsKey(name))
+            return true;
+        if(beanDefinitionMap.containsKey(name))
+            return true;
+        return false;
+    }
+
 }
 
