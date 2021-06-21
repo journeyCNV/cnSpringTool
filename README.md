@@ -1,7 +1,8 @@
 # cnSpringTool
 My spring frame
 
-开发文档
+开发文档 持续更新 
+PS：开发文档记录速度比实际开发进度要慢很多，可以看代码
 
 ***
 # 前言
