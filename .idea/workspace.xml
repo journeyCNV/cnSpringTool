@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="add Exception define">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/NNBeanProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/NNBeanProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/annotation/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/annotation/Component.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/annotation/ComponentScan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/annotation/ComponentScan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/AutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/AutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/BeanSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/BeanSupport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/NNBeanProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/NNBeanProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/annotation/Component.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/annotation/Component.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/AutowireCapableBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/AutowireCapableBeanFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/BeanSupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/BeanSupport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" afterDir="false" />
+    <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/annotation/ComponentScan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/annotation/ComponentScan.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +119,7 @@
       <workItem from="1623914431633" duration="24702000" />
       <workItem from="1624008219234" duration="48888000" />
       <workItem from="1624218226330" duration="4101000" />
-      <workItem from="1624254854059" duration="14605000" />
+      <workItem from="1624254854059" duration="14906000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1624124733140</created>
@@ -185,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624289513520</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="continue implement bean init">
+      <created>1624298410710</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624298410710</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +192,8 @@
     <MESSAGE value="reconfiguration frame table" />
     <MESSAGE value="start create AutowireCapableBeanFactory" />
     <MESSAGE value="add Exception define" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Exception define" />
+    <MESSAGE value="continue implement bean init" />
+    <option name="LAST_COMMIT_MESSAGE" value="continue implement bean init" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
