@@ -1,6 +1,5 @@
 package com.cnn.survive;
 
-import com.spring.annotation.Autowired;
 import com.spring.annotation.Component;
 
 @Component("dog")

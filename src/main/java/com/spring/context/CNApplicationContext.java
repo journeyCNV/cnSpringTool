@@ -9,6 +9,7 @@ import com.spring.annotation.Scope;
 import com.spring.beansfactory.config.BeanDefinition;
 import com.spring.beansfactory.config.BeanPostProcessor;
 import com.spring.beansfactory.support.AutowireCapableBeanFactory;
+import com.spring.beansfactory.support.BeanSupport;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -20,7 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class CNApplicationContext {
     //配置文件
-    private Class configClass;
+    final private Class configClass;
 
     //BeanFactory支持类
     private AutowireCapableBeanFactory beanFactory = new AutowireCapableBeanFactory();
@@ -60,8 +61,12 @@ public class CNApplicationContext {
         Object instance = null;
 
         try {
+
+            BeanSupport beanSupport = beanFactory.createBeanInstance(beanName,clazz);
+            instance = beanSupport.getInstance();
+
             //调用support包里的方法 包含依赖注入的-构造注入
-            instance = beanFactory.createBeanInstance(beanName,clazz);
+            //instance = beanFactory.createBeanInstance(beanName,clazz);
 
             //通过反射获得Bean
             //instance = clazz.getDeclaredConstructor().newInstance();
