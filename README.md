@@ -543,7 +543,10 @@ ApplicationContext 根据指定的 beanName 去获取和创建对象的过程称
 大概可以描述为：选择能够成功注入最多bean对象的使用了@Autowired注解的构造函数，即基于贪婪的策略。
 
 这一块的实现还是比较复杂的，又创建了三个类来支持这个功能的实现。
+
 ![](https://img-blog.csdnimg.cn/2021062202035813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTc4MTM4,size_16,color_FFFFFF,t_70)
+
+
 核心部分是这个方法：
 ```java
 public BeanSupport createBeanInstance(String beanName,Class<?> clazz) {
