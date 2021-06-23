@@ -7,14 +7,6 @@
     <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/AutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/AutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/BeanSupportCandidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/BeanSupportCandidate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/TestSpring.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/TestSpring.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/BeanSupportCandidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/BeanSupportCandidate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +63,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -139,7 +131,7 @@
       <workItem from="1624218226330" duration="4101000" />
       <workItem from="1624254854059" duration="20494000" />
       <workItem from="1624431758029" duration="5451000" />
-      <workItem from="1624469853756" duration="4224000" />
+      <workItem from="1624469853756" duration="4837000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1624124733140</created>
@@ -211,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624299247177</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="finish basic IoC project">
+      <created>1624474230605</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1624474230605</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +227,8 @@
     <MESSAGE value="add Exception define" />
     <MESSAGE value="continue implement bean init" />
     <MESSAGE value="add some specifics" />
-    <option name="LAST_COMMIT_MESSAGE" value="add some specifics" />
+    <MESSAGE value="finish basic IoC project" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish basic IoC project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
