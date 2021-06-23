@@ -120,6 +120,4 @@ public class AutowireCapableBeanFactory {
         throw  new BeansException("无法确定使用 "+beanName+" Bean的哪个构造方法");
     }
 
-
-
 }

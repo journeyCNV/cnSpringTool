@@ -6,6 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/AutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/AutowireCapableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/BeanSupportCandidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/BeanSupportCandidate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/TestSpring.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/TestSpring.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/BeanSupportCandidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/BeanSupportCandidate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +47,16 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="216d7b25-35cc-4661-b062-e7f0f31e2ece" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../ToolsDownload/apache-maven-3.6.3-bin/apache-maven-3.6.3" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1tr52f1cBQblythrJhiz6ITJzUo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -73,15 +93,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -119,7 +137,9 @@
       <workItem from="1623914431633" duration="24702000" />
       <workItem from="1624008219234" duration="48888000" />
       <workItem from="1624218226330" duration="4101000" />
-      <workItem from="1624254854059" duration="15564000" />
+      <workItem from="1624254854059" duration="20494000" />
+      <workItem from="1624431758029" duration="5451000" />
+      <workItem from="1624469853756" duration="4224000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1624124733140</created>
@@ -184,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624298782754</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add some specifics">
+      <created>1624299247177</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624299247177</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +229,22 @@
     <MESSAGE value="continue implement bean init" />
     <MESSAGE value="add some specifics" />
     <option name="LAST_COMMIT_MESSAGE" value="add some specifics" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/AutowireCapableBeanFactory.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

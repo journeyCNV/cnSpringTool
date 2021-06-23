@@ -1,15 +1,15 @@
 package com.cnn;
 
+import com.cnn.survive.Dog;
 import com.cnn.survive.Food;
 import com.cnn.survive.Hhhh;
 import com.spring.context.CNApplicationContext;
 
+import java.util.Arrays;
+
 public class TestSpring {
 
     public static void main(String[] args){
-
-        //WhatF whatF = new WhatF();
-        //System.out.println(whatF.aByte+"----"+whatF.hh+"----"+whatF.name+"----"+whatF.ff);
 
         CNApplicationContext cnApplicationContext = new CNApplicationContext(TestConfig.class);
         Hhhh hhhh = (Hhhh) cnApplicationContext.getBean("hhhh");
@@ -17,6 +17,10 @@ public class TestSpring {
 
         Food food = (Food) cnApplicationContext.getBean("food");
         food.test();
+
+        System.out.println("******************************");
+        Dog dog = (Dog) cnApplicationContext.getBean("dog");
+        dog.test();
     }
 
 }

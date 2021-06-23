@@ -14,7 +14,7 @@ public class BeanSupportCandidate {
         this.noParamCon = noParamCon;
     }
 
-    public ArrayList getCandidates(){
+    public ArrayList<Constructor<?>> getCandidates(){
         return candidates;
     }
 
@@ -25,4 +25,5 @@ public class BeanSupportCandidate {
     public Constructor<?> getNoParamCon(){
         return noParamCon;
     }
+
 }

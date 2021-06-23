@@ -12,8 +12,10 @@ import com.spring.beansfactory.support.AutowireCapableBeanFactory;
 import com.spring.beansfactory.support.BeanSupport;
 
 import java.io.File;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Parameter;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +54,8 @@ public class CNApplicationContext {
     }
 
     /**
-     * 创建bean
+     * 创建Bean
+     * @param beanName
      * @param beanDefinition
      * @return
      */
@@ -61,17 +64,56 @@ public class CNApplicationContext {
         Object instance = null;
 
         try {
-
             BeanSupport beanSupport = beanFactory.createBeanInstance(beanName,clazz);
-            instance = beanSupport.getInstance();
 
-            //调用support包里的方法 包含依赖注入的-构造注入
-            //instance = beanFactory.createBeanInstance(beanName,clazz);
+            //这里需要处理一下 依赖注入-构造注入
+            if (beanSupport.getInstance()!=null) { //不用选举，已经确定
+                instance = beanSupport.getInstance();
+                if (beanSupport.isMayHasBean()) {
+                    for (String name : beanSupport.getBeanNames()) {
+                        if (containsBean(name)) {
+                            Object beanNeed = getBean(name);
+                            Field field = clazz.getDeclaredField(name);
+                            field.setAccessible(true);
+                            field.set(instance,beanNeed);
+                        }
+                    }
+                }
+            }else {
+                Constructor<?> hasMaxNumBeanCon=null;
+                int currentMax=0;
+                for (Constructor<?> candidate : beanSupport.getCandidate().getCandidates()) {
+                    int count = 0;
+                    for (Parameter parameter : candidate.getParameters()) {
+                        count += containsBean(parameter.getName())?1:0;
+                    }
+                    if(count>currentMax){
+                        currentMax = count;
+                        hasMaxNumBeanCon = candidate;
+                    }
+                }
+                Parameter[] params = hasMaxNumBeanCon.getParameters();
+                ArrayList<Object> paramList = new ArrayList<>();
+                for (Parameter param : params) {
+                    if(param.getType().isPrimitive()) { //如果是基本类型
+                        if (param.getType() == Boolean.class) {
+                            paramList.add(false);
+                        } else {
+                            paramList.add(0);
+                        }
+                    }else {
+                        if (containsBean(param.getName())) {
+                            paramList.add(getBean(param.getName()));
+                        }else{
+                            paramList.add(null);
+                        }
+                    }
+                }
+                instance = hasMaxNumBeanCon.newInstance(paramList.toArray());
+            }
 
-            //通过反射获得Bean
-            //instance = clazz.getDeclaredConstructor().newInstance();
 
-            //依赖注入-属性注入
+            //依赖注入-属性注入 @Autowired注解
             for (Field declaredField : clazz.getDeclaredFields()) {
                 //如果属性上加了Autowired注解，那我就进行属性赋值
                 if(declaredField.isAnnotationPresent(Autowired.class)){
@@ -114,6 +156,8 @@ public class CNApplicationContext {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchFieldException e) {
             e.printStackTrace();
         }
         return null;
