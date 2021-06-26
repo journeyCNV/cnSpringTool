@@ -1,5 +1,7 @@
 package com.spring.context;
 
+import com.spring.annotation.aop.Aspect;
+import com.spring.aop.ProxyCreator;
 import com.spring.beansfactory.BeanNameAware;
 import com.spring.beansfactory.InitializingBean;
 import com.spring.annotation.Autowired;
@@ -201,14 +203,25 @@ public class CNApplicationContext {
                             //解析类，判断当前bean是单例bean，还是prototype的bean
                             //解析类生成一个BeanDefinition对象
 
+                            Component componentAnnotation = clazz.getDeclaredAnnotation(Component.class);
+                            String beanName = componentAnnotation.value();
+
                             //当前class对象是否实现了BeanPostProcessor接口
                             if (BeanPostProcessor.class.isAssignableFrom(clazz)) {
                                 BeanPostProcessor instanceBpp = (BeanPostProcessor) clazz.getDeclaredConstructor().newInstance();
                                 beanPostProcessorList.add(instanceBpp);
                             }
 
-                            Component componentAnnotation = clazz.getDeclaredAnnotation(Component.class);
-                            String beanName = componentAnnotation.value();
+                            /**
+                             * 使用AOP只重写了后置方法,和上面的还是不一样的。
+                             * 也希望程序员如果用了这个注解就不要再去继承BeanPostProcessor了
+                             * 除非是希望在Bean初始化前做一些操作
+                             */
+                            //当前class对象是否使用@Aspect注解
+                            if(clazz.isAnnotationPresent(Aspect.class)){
+                                BeanPostProcessor bpp = new ProxyCreator(clazz.getDeclaredAnnotation(Aspect.class).value(),clazz);
+                                beanPostProcessorList.add(bpp);
+                            }
 
                             //解析出来的Bean的定义
                             BeanDefinition beanDefinition = new BeanDefinition();
@@ -216,7 +229,10 @@ public class CNApplicationContext {
                             if (clazz.isAnnotationPresent(Scope.class)) {
                                 Scope scopeAnnotation = clazz.getDeclaredAnnotation(Scope.class);
                                 beanDefinition.setScope(scopeAnnotation.value());
-                            } else {
+                            } else if(clazz.isAnnotationPresent(Aspect.class)){
+                                beanDefinition.setScope("prototype");
+                            }
+                            else {
                                 beanDefinition.setScope("singleton");
                             }
                             //扫描到的所有类的定义

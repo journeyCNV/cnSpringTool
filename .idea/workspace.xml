@@ -6,7 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Food.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/FoodImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/FoodImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Hhhh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Hhhh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/NNBeanProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/NNBeanProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/TestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/config/BeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/config/BeanPostProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/TestSpring.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/TestSpring.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="AnnotationType" />
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -63,7 +73,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../cnvblog" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -81,6 +91,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,7 +142,8 @@
       <workItem from="1624254854059" duration="20494000" />
       <workItem from="1624431758029" duration="5451000" />
       <workItem from="1624469853756" duration="5218000" />
-      <workItem from="1624475257627" duration="1510000" />
+      <workItem from="1624475257627" duration="3428000" />
+      <workItem from="1624515231530" duration="28879000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1624124733140</created>
@@ -207,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624474923157</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="change pom">
+      <created>1624477119080</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1624477119080</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,21 +254,16 @@
     <MESSAGE value="continue implement bean init" />
     <MESSAGE value="add some specifics" />
     <MESSAGE value="finish basic IoC project" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish basic IoC project" />
+    <MESSAGE value="change pom" />
+    <option name="LAST_COMMIT_MESSAGE" value="change pom" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/AutowireCapableBeanFactory.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="19" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

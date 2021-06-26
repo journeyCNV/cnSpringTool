@@ -3,11 +3,9 @@ package com.cnn.survive;
 import com.spring.beansfactory.config.BeanPostProcessor;
 import com.spring.annotation.Component;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-@Component("beanProcessor")
+//@Component("beanProcessor")
 public class NNBeanProcessor implements BeanPostProcessor {
 
     @Override
@@ -33,18 +31,13 @@ public class NNBeanProcessor implements BeanPostProcessor {
         if (beanName.equals("food")) {
             Object proxyInstance = Proxy.newProxyInstance(NNBeanProcessor.class.getClassLoader(),
                     bean.getClass().getInterfaces(),
-                    new InvocationHandler() {
-                        @Override
-                        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                            System.out.println("food用到的代理逻辑");
-                            /**
-                             * 可以找切点，然后执行切点的方法 ……
-                             */
-
-                            return method.invoke(bean,args);//这里会调用被代理对象的业务方法
-                        }
+                    (proxy, method, args) -> {
+                        System.out.println("food用到的代理逻辑");
+                        /**
+                         * 可以找切点，然后执行切点的方法 ……
+                         */
+                        return method.invoke(bean,args);//这里会调用被代理对象的业务方法
                     });
-
             return proxyInstance;
         }
         return bean;

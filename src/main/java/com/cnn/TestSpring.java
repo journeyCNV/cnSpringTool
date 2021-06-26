@@ -12,15 +12,16 @@ public class TestSpring {
     public static void main(String[] args){
 
         CNApplicationContext cnApplicationContext = new CNApplicationContext(TestConfig.class);
-        Hhhh hhhh = (Hhhh) cnApplicationContext.getBean("hhhh");
-        hhhh.test();
+        //Hhhh hhhh = (Hhhh) cnApplicationContext.getBean("hhhh");
+        //hhhh.test();
 
         Food food = (Food) cnApplicationContext.getBean("food");
         food.test();
+        food.eat();
 
-        System.out.println("******************************");
-        Dog dog = (Dog) cnApplicationContext.getBean("dog");
-        dog.test();
+        //System.out.println("******************************");
+        //Dog dog = (Dog) cnApplicationContext.getBean("dog");
+        //dog.test();
     }
 
 }
