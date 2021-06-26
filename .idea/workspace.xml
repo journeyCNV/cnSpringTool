@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/FoodImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/FoodImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Hhhh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Hhhh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/NNBeanProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/NNBeanProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/TestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/config/BeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/config/BeanPostProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/TestSpring.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/TestSpring.class" afterDir="false" />
+    <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="update AOP">
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Food.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Food.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/FoodImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/FoodImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Hhhh.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Hhhh.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/NNBeanProcessor$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/NNBeanProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/NNBeanProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/TestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/TestService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/config/BeanPostProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/config/BeanPostProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +141,7 @@
       <workItem from="1624431758029" duration="5451000" />
       <workItem from="1624469853756" duration="5218000" />
       <workItem from="1624475257627" duration="3428000" />
-      <workItem from="1624515231530" duration="28879000" />
+      <workItem from="1624515231530" duration="29206000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1624124733140</created>
@@ -236,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624477119080</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update AOP">
+      <created>1624733943349</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1624733943349</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +260,8 @@
     <MESSAGE value="add some specifics" />
     <MESSAGE value="finish basic IoC project" />
     <MESSAGE value="change pom" />
-    <option name="LAST_COMMIT_MESSAGE" value="change pom" />
+    <MESSAGE value="update AOP" />
+    <option name="LAST_COMMIT_MESSAGE" value="update AOP" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
