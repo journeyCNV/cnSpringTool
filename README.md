@@ -636,6 +636,284 @@ public BeanSupport createBeanInstance(String beanName,Class<?> clazz) {
     }
 ```
 
+## 依赖注入-构造注入
+核心代码：
+**CNApplicationContext.java** 的 createBean方法
+```java
+            if (beanSupport.getInstance()!=null) { //不用选举，已经确定
+                instance = beanSupport.getInstance();
+                if (beanSupport.isMayHasBean()) {
+                    for (String name : beanSupport.getBeanNames()) {
+                        if (containsBean(name)) {
+                            Object beanNeed = getBean(name);
+                            Field field = clazz.getDeclaredField(name);
+                            field.setAccessible(true);
+                            field.set(instance,beanNeed);
+                        }
+                    }
+                }
+            }else {
+                Constructor<?> hasMaxNumBeanCon=null;
+                int currentMax=0;
+                for (Constructor<?> candidate : beanSupport.getCandidate().getCandidates()) {
+                    int count = 0;
+                    for (Parameter parameter : candidate.getParameters()) {
+                        count += containsBean(parameter.getName())?1:0;
+                    }
+                    if(count>currentMax){
+                        currentMax = count;
+                        hasMaxNumBeanCon = candidate;
+                    }
+                }
+                Parameter[] params = hasMaxNumBeanCon.getParameters();
+                ArrayList<Object> paramList = new ArrayList<>();
+                for (Parameter param : params) {
+                    if(param.getType().isPrimitive()) { //如果是基本类型
+                        if (param.getType() == Boolean.class) {
+                            paramList.add(false);
+                        } else {
+                            paramList.add(0);
+                        }
+                    }else {
+                        if (containsBean(param.getName())) {
+                            paramList.add(getBean(param.getName()));
+                        }else{
+                            paramList.add(null);
+                        }
+                    }
+                }
+                instance = hasMaxNumBeanCon.newInstance(paramList.toArray());
+            }
+```
+
+到此 IoC已经基本实现结束。
+***
+# AOP实现
+***
+## InitializingBean
+这并不是AOP实现的一部分，但是和后面的BeanPostProcessor有关系，就放在这里了。
+
+```java
+/**
+ * 模仿Spring
+ * InitializingBean接口为bean提供了属性初始化后的处理方法，
+ * 它只包括afterPropertiesSet方法，凡是继承该接口的类，在bean的属性初始化后都会执行该方法。
+ */
+public interface InitializingBean {
+    void afterPropertiesSet() throws Exception;
+}
+```
+InitialingBean接口只有一个方法，在bean实例化后会进行初始化。
+![](https://img-blog.csdnimg.cn/20210624141743714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTc4MTM4,size_16,color_FFFFFF,t_70)
+```java
+			//初始化
+            if(instance instanceof InitializingBean){
+                try {
+                    ((InitializingBean) instance).afterPropertiesSet();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+```
+依赖注入完成后，bean实例化完毕后，会进行Bean的初始化，调用InitializinngBean的afterPropertiesSet()方法。
+
+***
+## BeanPostProcessor
+为什么要在这里写BeanPostProcessor，其实BeanPostProcessor为我们实现AOP提供了基础，在Spring源码里关于AOP的部分追踪到最后发现关系到BeanPostProcessor。
+
+```java
+/**
+ * BeanPostProcessor 是一个回调机制的扩展点，
+ * 它的核心工作点是在 bean 的初始化前后做一些额外的处理
+ * （预初始化 bean 的属性值、注入特定的依赖，甚至扩展生成代理对象等）
+ */
+public interface BeanPostProcessor {
+
+    /**
+     * 初始化前
+     * @param bean
+     * @param beanName
+     * @return
+     */
+    default Object postProcessBeforeInitialization(Object bean, String beanName) {
+        return bean;
+    }
+
+    /**
+     * 初始化后
+     * @param bean
+     * @param beanName
+     * @return
+     */
+    default Object postProcessAfterInitialization(Object bean, String beanName)  {
+        return bean;
+    }
+
+}
+```
+在createBean方法里体现了这个初始化前后的操作：
+![](https://img-blog.csdnimg.cn/20210624144231609.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTc4MTM4,size_16,color_FFFFFF,t_70)
+我们在ApplicationContext里还设置了一个List。
+```java
+private List<BeanPostProcessor> beanPostProcessorList = new ArrayList<>();
+```
+这个List获取的时间比创建Bean更早。
+
+```java
+			//当前class对象是否实现了BeanPostProcessor接口
+                            if (BeanPostProcessor.class.isAssignableFrom(clazz)) {
+                                BeanPostProcessor instanceBpp = (BeanPostProcessor) clazz.getDeclaredConstructor().newInstance();
+                                beanPostProcessorList.add(instanceBpp);
+                            }
+```
+在bean扫描的时候就去进行判断了。
+
+***
+## 设计AOP的思路
+AOP基于代理模式，对原来的业务进行增强，当我们想在不修改源码的情况下增强原来的功能，那么就可以对原来的业务类生成一个代理的对象，在代理对象中实现方法对原来的业务增强。
+
+这里我们实现框架，显然会使用动态代理完成需求。
+Java中通常有两种代理方式，一个是jdk自带的，一个是cglib实现的。
+
+这里先来写一个测试：
+
+```java
+@Component("beanProcessor")
+public class NNBeanProcessor implements BeanPostProcessor {
+
+    @Override  //Bean初始化前方法
+    public Object postProcessBeforeInitialization(Object bean, String beanName) {
+        if(beanName.equals("hhhh")){
+            ((Hhhh)bean).setBeanName("ohhh");
+        }
+        return bean;
+    }
+
+    @Override //Bean初始化后方法
+    public Object postProcessAfterInitialization(Object bean, String beanName)  {
+        /**
+         * 实现AOP
+         * 在Spring中开启AOP：@EnableAspectJAutoProxy
+         * 在Spring源码中,开启AOP就是通过上面的注解最终向容器里注册一个BeanPostProcessor的Bean对象
+         */
+        if (beanName.equals("food")) {
+            Object proxyInstance = Proxy.newProxyInstance(NNBeanProcessor.class.getClassLoader(),
+                    bean.getClass().getInterfaces(),
+                    (proxy, method, args) -> {
+                        System.out.println("food用到的代理逻辑");
+                        /**
+                         * 可以找切点，然后执行切点的方法 ……
+                         */
+                        return method.invoke(bean,args);//这里会调用被代理对象的业务方法
+                    });
+
+            return proxyInstance;
+        }
+        return bean;
+    }
+}
+```
+
+动态代理利用Java的反射技术在运行时创建一个实现某些给定接口的新类(也称"动态代理类")及其实例(对象)。
+代理的是接口，不是类。
+
+动态代理用于解决一个接口的实现在编译时无法知道，需要在运行时才能实现。
+
+>`Proxy.newProxyInstance()`方法有3个参数：
+>* 类加载器
+>* 返回的对象需要实现哪些接口
+>* 调用处理器
+
+调用处理器就是**InvocationHandler**类，用于激发动态代理类的方法。
+
+按照上面的写法会有下面这样的效果：当调用实现类的方法时，都会带上代理的逻辑。
+
+>![](https://img-blog.csdnimg.cn/2021062617483820.png)
+> FoodImpl是Food的实现子类，打印的“food用到的代理逻辑”是动态代理里设置的，method.invoke会被替换成具体的方法，从food继承来的test和eat方法。代理过的对象的业务方法就像被自动统一加上一段代码一样。
+>![](https://img-blog.csdnimg.cn/20210626174820113.png)
+现在有AOP的感觉了吧
+
+***
+## 实现AOP
+上面的测试使用的是JDK自带的代理，也提到了还有cglib。
+Spring对这两种代理方式都支持，在默认的情况下，如果bean实现了一个接口，使用JDK代理，如果没有那就用cglib代理。
+
+>**JDK动态代理和CGLIB字节码生成的区别**
+>* JDK动态代理只能对实现了接口的类生成代理，不能针对类
+>* CGLIB是针对类实现代理，主要是针对指定的类生成一个子类，覆盖其中的方法，并覆盖其中方法实现增强，因为采用的是继承，所以该类或方法最好不要声明为final。
+>\
+>PS: 随着JDK版本升级，jdk代理效率都在提升，甚至已经高于cglib
+
+```java
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Aspect {
+    /**
+     * 标记在实现代理功能的类上
+     */
+    public String value() default "";
+
+}
+```
+```java
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface Before {
+
+}
+```
+```java
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface After {
+}
+```
+
+```java
+public class ProxyCreator implements BeanPostProcessor {
+
+    private final String aspectBeanName; //要增强的目标bean的名字 比如说food
+
+    private final Class clazz; //被@Aspect注解的Class
+
+    public ProxyCreator(String aspectBeanName,Class clazz){
+        this.aspectBeanName = aspectBeanName;
+        this.clazz = clazz;
+    }
+
+    @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName) {
+        if(beanName.equals(aspectBeanName)) {
+            Object proxyInstance = Proxy.newProxyInstance(ProxyCreator.class.getClassLoader(),
+                    bean.getClass().getInterfaces(),
+                    (proxy, method, args) -> {
+                        Method[] classMethods = clazz.getDeclaredMethods();
+                        //前置方法
+                        //如果带了@before注解
+                        //在这里调用
+                        for (Method classMethod : classMethods) {
+                            if (classMethod.isAnnotationPresent(Before.class))
+                                classMethod.invoke(clazz.newInstance());
+                        }
+                        Object obj = method.invoke(bean, args); //会根据被继承的接口的方法来
+                        //后置方法
+                        //如果带了@after注解
+                        //在这里调用
+                        for (Method classMethod : classMethods) {
+                            if (classMethod.isAnnotationPresent(After.class))
+                                classMethod.invoke(clazz.newInstance());
+                        }
+                        return obj;
+                    });
+            return proxyInstance;
+        }
+        return null;
+    }
+
+}
+```
+![](https://img-blog.csdnimg.cn/20210627025237849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTc4MTM4,size_16,color_FFFFFF,t_70)
+Method 类的 invoke() 方法在指定的对象上，以指定的参数调用此 Method 对象表示的底层方法。单个参数自动匹配原始形式参数。基本参数和引用参数都根据需要进行方法调用转换。
 
 
 
