@@ -262,18 +262,9 @@ public class CNApplicationContext {
                     synchronized (CNApplicationContext.class){
                         if(!singletonObjects.containsKey(beanName)){
                             Class beanClazz = beanDefinition.getClazz();
-                            try {
-                                Object bean = beanClazz.getDeclaredConstructor().newInstance();
-                                singletonObjects.put(beanName,bean);
-                            } catch (InstantiationException e) {
-                                e.printStackTrace();
-                            } catch (IllegalAccessException e) {
-                                e.printStackTrace();
-                            } catch (InvocationTargetException e) {
-                                e.printStackTrace();
-                            } catch (NoSuchMethodException e) {
-                                e.printStackTrace();
-                            }
+                            //Object bean = beanClazz.getDeclaredConstructor().newInstance();
+                            Object bean = createBean(beanName,beanDefinition);
+                            singletonObjects.put(beanName,bean);
                         }
                     }
                     //这里记得从单例池拿，而不是上面直接返回

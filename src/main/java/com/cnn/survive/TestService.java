@@ -3,7 +3,7 @@ package com.cnn.survive;
 import com.spring.annotation.Component;
 import com.spring.beansfactory.InitializingBean;
 
-//@Component("testService")
+@Component("testService")
 public class TestService implements InitializingBean {
 
     @Override

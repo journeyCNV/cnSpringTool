@@ -4,8 +4,8 @@ import com.spring.annotation.Autowired;
 import com.spring.annotation.Component;
 import com.spring.annotation.Scope;
 
-//@Component("dog")
-//@Scope("prototype")
+@Component("dog")
+@Scope("prototype")
 public class Dog implements Annimal{
 
     private String name;

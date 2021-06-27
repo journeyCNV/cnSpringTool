@@ -28,23 +28,35 @@ public class ProxyCreator implements BeanPostProcessor {
                         //前置方法
                         //如果带了@before注解
                         //在这里调用
-                        for (Method classMethod : classMethods) {
-                            if (classMethod.isAnnotationPresent(Before.class))
-                                classMethod.invoke(clazz.newInstance());
+                        if (!isInNativeObject(method)) {
+                            for (Method classMethod : classMethods) {
+                                if (classMethod.isAnnotationPresent(Before.class))
+                                    classMethod.invoke(clazz.newInstance());
+                            }
                         }
                         Object obj = method.invoke(bean, args); //会根据被继承的接口的方法来
                         //后置方法
                         //如果带了@after注解
                         //在这里调用
-                        for (Method classMethod : classMethods) {
-                            if (classMethod.isAnnotationPresent(After.class))
-                                classMethod.invoke(clazz.newInstance());
+                        if (!isInNativeObject(method)) {
+                            for (Method classMethod : classMethods) {
+                                if (classMethod.isAnnotationPresent(After.class))
+                                    classMethod.invoke(clazz.newInstance());
+                            }
                         }
                         return obj;
                     });
             return proxyInstance;
         }
-        return null;
+        return bean;
+    }
+
+    public boolean isInNativeObject(Method method){
+        for (Method declaredMethod : Object.class.getDeclaredMethods()) {
+            if(declaredMethod.getName().equals(method.getName()))
+                return true;
+        }
+        return false;
     }
 
 }

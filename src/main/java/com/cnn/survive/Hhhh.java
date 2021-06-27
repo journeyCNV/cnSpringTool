@@ -5,8 +5,8 @@ import com.spring.beansfactory.BeanNameAware;
 import com.spring.annotation.Component;
 import com.spring.annotation.Scope;
 
-//@Component("hhhh")
-//@Scope("prototype")
+@Component("hhhh")
+@Scope("prototype")
 public class Hhhh implements BeanNameAware {
 
     @Autowired
