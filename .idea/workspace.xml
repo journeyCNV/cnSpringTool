@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_21_23_35_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_21_23_35__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Hhhh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Hhhh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/survive/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/survive/TestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/aop/ProxyCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/aop/ProxyCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/TestSpring.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/TestSpring.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Hhhh.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Hhhh.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/TestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/TestService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/aop/AopSupport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/aop/ProxyCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/aop/ProxyCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +27,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
         <option value="AnnotationType" />
       </list>
     </option>
@@ -69,7 +72,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cnvblog" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -92,15 +95,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -143,7 +144,8 @@
       <workItem from="1624469853756" duration="5218000" />
       <workItem from="1624475257627" duration="3428000" />
       <workItem from="1624515231530" duration="29424000" />
-      <workItem from="1624781545251" duration="8667000" />
+      <workItem from="1624781545251" duration="12827000" />
+      <workItem from="1624899667419" duration="1228000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1624124733140</created>
@@ -250,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624734116336</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fixed some bugs">
+      <created>1624793705243</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1624793705243</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +280,8 @@
     <MESSAGE value="change pom" />
     <MESSAGE value="update AOP" />
     <MESSAGE value="delete no use file" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete no use file" />
+    <MESSAGE value="fixed some bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
