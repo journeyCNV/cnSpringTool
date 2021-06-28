@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_21_23_35_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_21_23_35__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Dog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Hhhh.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Hhhh.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cnn/survive/TestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cnn/survive/TestService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/aop/AopSupport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/aop/ProxyCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/aop/ProxyCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/context/CNApplicationContext.class" afterDir="false" />
-    </list>
+    <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,7 +133,7 @@
       <workItem from="1624475257627" duration="3428000" />
       <workItem from="1624515231530" duration="29424000" />
       <workItem from="1624781545251" duration="12827000" />
-      <workItem from="1624899667419" duration="1228000" />
+      <workItem from="1624899667419" duration="1639000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1624124733140</created>
@@ -259,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624793705243</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="start mvc part work">
+      <created>1624900960829</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1624900960829</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +276,8 @@
     <MESSAGE value="update AOP" />
     <MESSAGE value="delete no use file" />
     <MESSAGE value="fixed some bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed some bugs" />
+    <MESSAGE value="start mvc part work" />
+    <option name="LAST_COMMIT_MESSAGE" value="start mvc part work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
