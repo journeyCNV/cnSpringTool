@@ -1,4 +1,4 @@
-package com.spring.mvc;
+package com.spring.mvc.servlet;
 
 public class PathDefine {
 

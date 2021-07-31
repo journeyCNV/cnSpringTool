@@ -1,4 +1,4 @@
-package com.spring.mvc;
+package com.spring.mvc.servlet;
 
 import java.lang.reflect.Method;
 import java.util.Map;

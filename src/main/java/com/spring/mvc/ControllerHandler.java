@@ -2,6 +2,8 @@ package com.spring.mvc;
 
 import com.spring.annotation.web.RequestMapping;
 import com.spring.annotation.web.RequestMethod;
+import com.spring.mvc.servlet.ControllerDefine;
+import com.spring.mvc.servlet.PathDefine;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
@@ -10,29 +12,37 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Controller分发器
+ */
 public class ControllerHandler {
-    /**
-     * Controller分发器
-     * Controller也相当于Bean
-     */
 
-    private Map<PathDefine,ControllerDefine> pathControllerMap = new ConcurrentHashMap<>();
+    private Map<PathDefine, ControllerDefine> pathControllerMap = new ConcurrentHashMap<>();
 
     public ControllerHandler(){
     }
 
+    /**
+     * 使用了@Controller的类调用这个方法
+     * @param classSet
+     */
     public ControllerHandler(Set<Class<?>> classSet){
-        //wait ……
+        for (Class<?> aClass : classSet) {
+            putPathController(aClass);
+        }
     }
 
-    //获取Controller信息
+    /**
+     * 获取Controller信息
+     */
     public ControllerDefine getController(String requestMethod, String requestPath){
         PathDefine pathDefine = new PathDefine(requestMethod,requestPath);
         return pathControllerMap.get(pathDefine);
     }
 
-    //添加信息到requestControllerMap中
-    //如果使用了@Controller注解,容器调用这个方法
+    /**
+     * 添加信息到requestControllerMap中
+     */
     private void putPathController(Class<?> clazz){
         String basePath;
         if(clazz.isAnnotationPresent(RequestMapping.class)){
@@ -67,7 +77,6 @@ public class ControllerHandler {
                 pathControllerMap.put(pathDefine,controllerDefine);
             }
         }
-
     }
 
 }
