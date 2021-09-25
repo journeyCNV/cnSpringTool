@@ -1,6 +1,6 @@
 package com.spring.mvc.servlet;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -13,7 +13,7 @@ public class ModelAndView {
     private String view;
 
     //页面data数据
-    private Map<String,Object> model = new HashMap<>();
+    private Map<String,Object> model = new LinkedHashMap<>();
 
     public ModelAndView setView(String view){
         this.view = view;

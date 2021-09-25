@@ -15,7 +15,7 @@ public class AutowireCapableBeanFactory {
      *
      * 实现的功能
      * 1.决定使用哪个构造函数创建Bean对象
-     * 2.解决循环依赖
+     * 2.解决循环依赖 //TODO 50%
      */
 
 
@@ -37,8 +37,8 @@ public class AutowireCapableBeanFactory {
 
         int consLength = cons.length;
 
-        ArrayList<Object> paramList = new ArrayList<>();
-        ArrayList<String> paramBeanNames = new ArrayList<>();
+        ArrayList<Object> paramList = new ArrayList<>(); //参数列表(值)
+        ArrayList<String> paramBeanNames = new ArrayList<>(); //需要依赖的参数bean列表
         boolean mayHasBean = false; //是否可能有依赖的Bean存在
         
         if(consLength==1){
@@ -50,7 +50,8 @@ public class AutowireCapableBeanFactory {
             }
             for (Parameter param : params) {
                 if(param.getType().isPrimitive()) { //如果是基本类型
-                    if (param.getType() == Boolean.class) {
+                    //基本类型不包括包装类，如果是包装类和String 也会被赋值为null
+                    if (param.getType() == boolean.class) {
                         paramList.add(false);
                     } else {
                         paramList.add(0);
@@ -101,7 +102,7 @@ public class AutowireCapableBeanFactory {
                 }
                 for (Parameter parameter : parameters) {
                     if(parameter.getType().isPrimitive()) { //如果是基本类型
-                        paramList.add(parameter.getType()==Boolean.class?false:0);
+                        paramList.add(parameter.getType()==boolean.class?false:0);
                     }else {
                         paramList.add(null);
                         paramBeanNames.add(parameter.getName());
