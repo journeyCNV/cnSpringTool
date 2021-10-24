@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5eb524c6-f4dd-4c66-9752-3e22f1dcec00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/annotation/web/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/annotation/web/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/AutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beansfactory/support/AutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/mvc/servlet/ModelAndView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/mvc/servlet/ModelAndView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/TestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/TestConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cnn/TestSpring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/context/CNApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/mvc/ControllerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/mvc/ControllerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/mvc/ResultRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/mvc/ResultRender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/AutowireCapableBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spring/beansfactory/support/AutowireCapableBeanFactory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +68,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ReBuBlog" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
@@ -88,15 +92,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,7 +162,8 @@
       <workItem from="1627987405873" duration="47000" />
       <workItem from="1627987723838" duration="1163000" />
       <workItem from="1629444706665" duration="3733000" />
-      <workItem from="1632579630192" duration="5399000" />
+      <workItem from="1632579630192" duration="5856000" />
+      <workItem from="1635067038687" duration="7342000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1624124733140</created>
@@ -316,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627745739485</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="修正细节bug，Boolean.class-&gt;boolean.class">
+      <created>1632586284231</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1632586284231</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,7 +352,8 @@
     <MESSAGE value="add ModelAndView" />
     <MESSAGE value="add Controller Handler" />
     <MESSAGE value="continue web" />
-    <option name="LAST_COMMIT_MESSAGE" value="continue web" />
+    <MESSAGE value="修正细节bug，Boolean.class-&gt;boolean.class" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正细节bug，Boolean.class-&gt;boolean.class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

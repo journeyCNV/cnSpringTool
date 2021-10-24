@@ -72,6 +72,8 @@ public class ControllerHandler {
                 if(pathControllerMap.containsKey(pathDefine)){
                     //已经存在该URL
                     throw new RuntimeException("url 重复注册!");
+                    //TODO
+                    //如果别的controller也有这个路径该如何处理
                 }
                 ControllerDefine controllerDefine = new ControllerDefine(clazz,method,paramsMap);
                 pathControllerMap.put(pathDefine,controllerDefine);

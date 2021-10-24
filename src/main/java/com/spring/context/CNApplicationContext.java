@@ -39,7 +39,6 @@ public class CNApplicationContext {
     private List<BeanPostProcessor> beanPostProcessorList = new ArrayList<>();
 
 
-
     public CNApplicationContext(Class configClass){
         this.configClass = configClass;
 
@@ -57,9 +56,6 @@ public class CNApplicationContext {
 
     /**
      * 创建Bean
-     * @param beanName
-     * @param beanDefinition
-     * @return
      */
     public Object createBean(String beanName,BeanDefinition beanDefinition){
         Class clazz = beanDefinition.getClazz();
@@ -167,7 +163,6 @@ public class CNApplicationContext {
 
     /**
      * 扫描路径，根据注解获取BeanDefinition放入beanDefinitionMap
-     * @param configClass
      */
     private void scanGetDefine(Class configClass) {
         //解析配置类
@@ -253,6 +248,9 @@ public class CNApplicationContext {
         }
     }
 
+    /**
+     * 按名称获取Bean
+     */
     public Object getBean(String beanName){
         if(beanDefinitionMap.containsKey(beanName)){
             BeanDefinition beanDefinition = beanDefinitionMap.get(beanName);
@@ -285,9 +283,12 @@ public class CNApplicationContext {
     }
 
     /**
+     * TODO
+     * 按类型获取Bean
+     */
+
+    /**
      * Bean是否存在
-     * @param name
-     * @return
      */
     public boolean containsBean(String name){
         if(singletonObjects.containsKey(name))
