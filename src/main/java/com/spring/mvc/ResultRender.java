@@ -4,8 +4,11 @@ import com.alibaba.fastjson.JSON;
 import com.spring.annotation.web.ResponseBody;
 import com.spring.common.CastUtil;
 import com.spring.context.CNApplicationContext;
+import com.spring.mvc.server.TomcatSupport;
 import com.spring.mvc.servlet.ControllerDefine;
 import com.spring.mvc.servlet.ModelAndView;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,6 +24,8 @@ import java.util.stream.Collectors;
  * 结果执行器
  */
 public class ResultRender {
+
+    private static Logger log = LoggerFactory.getLogger(ResultRender.class);
 
     private CNApplicationContext appContext;
 
@@ -39,7 +44,7 @@ public class ResultRender {
         List<Object> methodsParams = instanceOfMethodParams(controllerDefine.getMethodParams(),requestParam);
 
         //TODO
-        //一个Controller里可以有多个请求方法的，要加一下
+        // 一个Controller里可以有多个请求方法的，要加一下
 
         //这里直接getName还需要再商榷一下
         Object controller = appContext.getBean(controllerDefine.getControllerClass().getName());
@@ -75,12 +80,12 @@ public class ResultRender {
     }
 
     //TODO
-    //获取path中的参数
+    // 获取path中的参数
 
     /**
      * 实例化方法参数
      * TODO
-     * 传入object ?
+     *  传入object ?
      */
     private List<Object> instanceOfMethodParams(Map<String,Class<?>> methodParams,
                                                 Map<String,String> requestParams){
@@ -122,6 +127,8 @@ public class ResultRender {
                 writer.flush();
             }catch (IOException e){
                 e.printStackTrace(); //暂时这样
+                //TODO
+                // 异常统一处理
             }
         }else {
             String path;
@@ -142,12 +149,13 @@ public class ResultRender {
                 throw new RuntimeException("返回类型不合法！");
             }
             try{
-                // forward 请求转发
+                // forward
                 request.getRequestDispatcher("/templates/"+path).forward(request,response);
             } catch (Exception e) {
+                log.error("请求转发失败",e);
                 e.printStackTrace();
                 //TODO
-                //统一异常处理
+                // 统一异常处理
             }
         }
 

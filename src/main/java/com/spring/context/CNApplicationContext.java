@@ -23,6 +23,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * 上下文的主类
+ */
+
 public class CNApplicationContext {
     //配置文件
     final private Class configClass;
@@ -191,6 +195,12 @@ public class CNApplicationContext {
                     className = className.replace("\\", ".");
                     //System.out.println("类名"+className);
 
+                    /**
+                     * TODO
+                     * 加入Controller注解的解析
+                     * 做后续处理的解耦
+                     * 不允许程序员同时使用Component和Controller
+                     */
                     try {
                         Class<?> clazz = classLoader.loadClass(className);
                         if (clazz.isAnnotationPresent(Component.class)) {

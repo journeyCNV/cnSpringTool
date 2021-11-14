@@ -7,6 +7,8 @@ import com.spring.beansfactory.config.BeanPostProcessor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+//TODO 其他AOP方式
+
 public class ProxyCreator implements BeanPostProcessor {
 
     private final String aspectBeanName; //要增强的目标bean的名字 比如说food
